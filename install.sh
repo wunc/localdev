@@ -40,6 +40,12 @@ fi
 echo "[Local.dev] Installing Homebrew formulas..."
 brew bundle
 
+# Install mhsendmail
+echo "[Local.dev] Installing Mailhog sendmail..."
+sudo curl -o /usr/local/bin/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_darwin_amd64
+sudo chmod +x /usr/local/bin/mhsendmail
+cp ./php-mhsendmail.ini /usr/local/etc/php/7.1/conf.d/
+
 # Install Ruby things
 echo "[Local.dev] Installing Ruby and the Gems..."
 gem update --system
